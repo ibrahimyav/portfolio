@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Selcttion</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+    .container {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.criteria {
+  display: block;
+  margin: 10px;
+}
+.criteria:hover{
+    background-color: gray;
+    transition: ease;
+}
+
+.result {
+  display: none;
+}
+
+.card {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+</style>
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+    <h1>Selection</h1>
+  </header>
+  <main>
+    <div class="container">
+        <h1>Eligibility Check</h1>
+        <div class="criteria">
+          <input class="form-check-input" type="checkbox" value="" id="">
+          <label class="form-check-label" for="">
+            Default checkbox
+          </label>
+        </div>
+        <div class="criteria">
+          <input class="form-check-input" type="checkbox" value="" id="" checked>
+          <label class="form-check-label" for="">
+            Checked checkbox
+          </label>
+        </div>
+        <form>
+          <div class="criteria">
+            <input type="checkbox" id="criteria1">
+            <label for="criteria1">Criteria 1</label>
+          </div>
+          <div class="criteria">
+            <input type="checkbox" id="criteria2">
+            <label for="criteria2">Criteria 2</label>
+          </div>
+          <!-- Add more criteria -->
+          <div class="criteria">
+            <input type="checkbox" id="criteria10">
+            <label for="criteria10">Criteria 10</label>
+          </div>
+        </form>
+        <div class="result">
+          <!-- This will be displayed when all criteria are checked -->
+          <h2>Result</h2>
+          <div class="card">
+            <h3>Title</h3>
+            <img src="./assets/img/b57ed0_a606baf61f4f453b8360726c5a89e62a_mv2.webp" alt="Image">
+            <p>Website: <a href="#"></a></p>
+            <p>Address: </p>
+          </div>
+        </div>
+      </div>
+      
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+  <script>
+    const checkboxes = document.querySelectorAll('.criteria input[type="checkbox"]');
+const result = document.querySelector('.result');
+
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', handleCheck);
+});
+
+function handleCheck() {
+  let allChecked = true;
+  checkboxes.forEach(checkbox => {
+    if (!checkbox.checked) {
+      allChecked = false;
+    }
+  });
+  if (allChecked) {
+    result.style.display = 'block';
+  } else {
+    result.style.display = 'none';
+  }
+}
+  </script>
+</body>
+
+</html>
