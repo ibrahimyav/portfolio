@@ -1,10 +1,15 @@
 import React from 'react'
-import Card from './Card';
+import Card from './Card/Card';
+import {data} from '../helpers/data'
+import './Main.scss'
 
 function Main() {
   return (
-    <div>
-        <Card/>
+    <div className='main'>
+        {data.map((place)=>{
+            return <Card location={place}/>
+        })}
+        
     </div>
   )
 }
