@@ -5,6 +5,7 @@ This project is a web application built using CSS, HTML, and Sass. The goal of t
 - CSS
 - HTML
 - Sass
+- BootStrap
 
 # Setting up and Running the Project
 - Clone the repository to your local machine
